@@ -1,5 +1,4 @@
-import React from 'react'
-import { updateTypePredicateNodeWithModifier } from 'typescript'
+import React, { useState } from 'react'
 import { ReactComponent as EditIcon } from '../images/edit-icon.svg'
 
 interface Props {
@@ -10,9 +9,17 @@ interface Props {
 }
 
 export const Todo:React.FC<Props> = ({ todo, toggleTodo, editTodo, updateTodo }) => {
+  const [title, setTitle] = useState(todo.title)
+
+  const { edited } = todo
 
   if (todo.edited) {
-    return <li><input type='text' value={todo.title} onChange={e => updateTodo(todo, e.target.value) } /></li>
+    return <li>
+      <input type='text' 
+        value={title} 
+        onChange={e => setTitle(e.target.value)} />
+      <input type='button' className='btn-primary' value='Save' onClick={e => updateTodo({ todo, title, edited: false }) }/>
+      </li>
   }
 
   return (

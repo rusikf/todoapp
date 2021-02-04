@@ -44,10 +44,14 @@ function App() {
     setTodos(newTodos)
   }
 
-  const updateTodo = (todo: Todo, title: string) => {
+  // TODO: remove duplicate methods logic: editTodo, updateTodo, toggleTodo
+  
+  const updateTodo = (props: {todo: Todo, title: string, edited: boolean }) => {
+    const { title, edited, todo } = props
+    console.log('update todo with title', title)
     const newTodos = todos.map(el => {
-      if (el.title === title) { // TODO: add id
-        return { ...el, edited: !el.edited, title }
+      if (el.title === todo.title) { // TODO: add id
+        return { ...el, edited, title }
       }
       return el
     })

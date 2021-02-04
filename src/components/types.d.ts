@@ -6,4 +6,4 @@ interface Todo {
 
 type toggleTodo = (todo: Todo) => void
 type editTodo = (todo: Todo) => void
-type updateTodo = (todo: Todo, title: string) => void
+type updateTodo = ({ todo: Todo, title: string, edited: boolean }) => void

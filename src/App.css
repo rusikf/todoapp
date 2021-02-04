@@ -116,3 +116,11 @@ ul.todo-list li.checked::before {
   width: 15px;
   height: 15px;
 }
+
+.btn-primary {
+  background: linear-gradient(45deg, #ea9e2a, transparent);
+  padding: 10px;
+  border-radius: 5%;
+  width: 100px;
+  border: 1px solid #fff;
+}
