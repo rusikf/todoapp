@@ -1,8 +1,8 @@
 # Install
 
-`yarn install`
+`npm install`
 
 # Deploy
 
-`yarn run deploy`
+`npm run deploy`
 
