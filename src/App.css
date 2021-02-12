@@ -22,9 +22,10 @@ ul.todo-list {
 }
 
 ul.todo-list li{
+  display: flex;
+  justify-content: space-between;
   cursor: pointer;
-  position: relative;
-  padding: 12px 8px 12px 40px;
+  padding: 12px 40px 12px 40px;
   background: #eee;
   font-size: 18px;
   transition: 0.2s;
@@ -49,6 +50,7 @@ ul.todo-list li.checked{
   color: #fff;
   text-decoration: line-through;
   border: 0.5px solid black;
+  position: relative;
 }
 
 ul.todo-list li.checked::before {
@@ -111,3 +113,15 @@ ul.todo-list li.checked::before {
   font-weight: 700;
 }
 
+.todo-list svg {
+  width: 15px;
+  height: 15px;
+}
+
+.btn-primary {
+  background: linear-gradient(45deg, #ea9e2a, transparent);
+  padding: 10px;
+  border-radius: 5%;
+  width: 100px;
+  border: 1px solid #fff;
+}
