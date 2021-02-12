@@ -50,6 +50,7 @@ ul.todo-list li.checked{
   color: #fff;
   text-decoration: line-through;
   border: 0.5px solid black;
+  position: relative;
 }
 
 ul.todo-list li.checked::before {

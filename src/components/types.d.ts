@@ -1,9 +1,9 @@
 interface Todo {
   title: string,
   checked: boolean,
-  edited: boolean
+  edited: boolean,
+  id: string
 }
 
-type toggleTodo = (todo: Todo) => void
-type editTodo = (todo: Todo) => void
+type updateTodoField = (todo: Todo, field: { title: string, value: any }) => void
 type updateTodo = ({ todo: Todo, title: string, edited: boolean }) => void

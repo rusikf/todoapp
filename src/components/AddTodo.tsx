@@ -10,7 +10,7 @@ export const AddTodo: React.FC<Props> = ({addTodo}) => {
   const [title, setTitle] = useState('')
   return (
     <div className="todo-header">
-      <h2>ToDo List</h2>
+      <h2>Todo app</h2>
       <input 
         type="text" 
         placeholder="New Task..."
