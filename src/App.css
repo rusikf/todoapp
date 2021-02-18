@@ -125,3 +125,9 @@ ul.todo-list li.checked::before {
   width: 100px;
   border: 1px solid #fff;
 }
+
+.todo-list__icons {
+  display: flex;
+  justify-content: space-between;
+  width: 35px;
+}

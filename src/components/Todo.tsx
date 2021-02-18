@@ -1,13 +1,23 @@
 import React, { useState } from 'react'
 import { ReactComponent as EditIcon } from '../images/edit-icon.svg'
-
+import { ReactComponent as RemoveIcon } from '../images/remove-icon.svg'
 interface Props {
   todo: Todo,
-  updateTodoField: updateTodoField
+  updateTodoField: updateTodoField,
+  removeTodo: removeTodo
 }
 
-export const Todo:React.FC<Props> = ({ todo, updateTodoField }) => {
+export const Todo:React.FC<Props> = ({ todo, updateTodoField, removeTodo }) => {
   const [title, setTitle] = useState(todo.title)
+  const handleEdit = (e:any) => {
+    e.stopPropagation()
+    updateTodoField(todo, { title: 'edited', value: !todo.edited })
+  }
+
+  const handleRemove = (e:any) => {
+    e.stopPropagation()
+    removeTodo(todo.id)
+  }
 
   if (todo.edited) {
     return <li>
@@ -24,9 +34,10 @@ export const Todo:React.FC<Props> = ({ todo, updateTodoField }) => {
   return (
     <li onClick={e => { updateTodoField(todo, { title: 'checked', value: !todo.checked }) } } className={ todo.checked ? 'checked' : undefined }>
     { todo.title }
-      <EditIcon onClick = { e => { e.stopPropagation(); updateTodoField(todo, { title: 'edited', value: !todo.edited }) } 
-    }/>
+    <span className='todo-list__icons'>
+    <EditIcon onClick = { e => handleEdit(e) }/>
+    <RemoveIcon onClick = { e => handleRemove(e) }/>
+    </span> 
     </li>
-    
   )
 }
