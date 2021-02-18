@@ -44,11 +44,16 @@ function App() {
     setTodos(newTodos)
   } 
 
+  const removeTodo = (id: string) => {
+    const newTodos = todos.filter(el => el.id !== id)
+    setTodos(newTodos)
+  }
+
   return (
     <div className="App">
       <div className="container">
         <AddTodo addTodo={addTodo}/>
-        <TodoList todos={todos} updateTodoField={updateTodoField}/>
+        <TodoList todos={todos} removeTodo={removeTodo} updateTodoField={updateTodoField}/>
       </div>
     </div>
   );
